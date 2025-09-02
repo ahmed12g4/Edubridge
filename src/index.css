@@ -1,0 +1,765 @@
+@import url("https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&family=Libre+Franklin:ital,wght@0,100..900;1,100..900&family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --dark-blue: #252b42;
+  --sky-blue: #23a6f0;
+  --light-sky-blue: #b2e3ff;
+  --light-orange: #e77c40;
+  --red: #e74040;
+  --light-Pink: #ffdcd1;
+  --iight-gray: #737373;
+  --yellow: #f3cd03;
+  --green: #2dc071;
+  --light-green: #b9eaa8;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+p {
+  line-height: 1.4;
+}
+
+/* Utllity Classes */
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 0 2rem;
+}
+
+.text-primary {
+  color: var(--sky-blue);
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.text-sacondary {
+  color: var(--green);
+  font-weight: 600;
+  font-size: 14px;
+}
+
+/* Header Start */
+
+#header {
+  background-color: var(--dark-blue);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1100px;
+  margin: auto;
+  padding: 0 2rem;
+  height: 100px;
+}
+
+.navbar a {
+  color: #fff;
+  font-size: 14px;
+}
+
+.navbar .logo {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.navbar ul {
+  display: flex;
+}
+
+.navbar ul li a {
+  margin: 0 10px;
+  transition: all 0.3s ease;
+}
+
+.navbar ul li a:hover {
+  color: var(--red);
+}
+
+.navbar .account .btn-join {
+  background-color: var(--sky-blue);
+  padding: 10px 20px;
+  margin-left: 25px;
+  border-radius: 5px;
+  text-transform: uppercase;
+  transition: all 0.4s ease;
+}
+
+.navbar .account .btn-join:hover {
+  background-color: transparent;
+  border: 1px solid var(--sky-blue);
+}
+
+.navbar .account .btn-join svg {
+  font-size: 12px;
+  margin-left: 5px;
+}
+
+/* Header End */
+/* Main Star */
+/* Home Start */
+#home {
+  background-color: var(--dark-blue);
+  padding: 5rem 0;
+}
+
+#home .home-header {
+  text-align: center;
+  color: #fff;
+  max-width: 450px;
+  margin: auto;
+}
+
+#home .home-header span {
+  color: var(--red);
+  font-weight: 600;
+}
+
+#home .home-header h1 {
+  font-size: 40px;
+  font-weight: 600;
+  margin: 20px 0;
+  color: var(--light-Pink);
+}
+
+#home .home-header p {
+  margin-bottom: 30px;
+  color: var(--light-Pink);
+  line-height: 1.6;
+}
+
+#home .home-header .btn {
+  padding: 10px 30px;
+  border-radius: 5px;
+  border: 1px solid var(--red);
+  font-size: 12px;
+  font-weight: 500;
+  margin: 0 5px;
+}
+
+#home .home-header .btn.btn-red {
+  background-color: var(--red);
+  color: #fff;
+  transition: all 0.5s ease;
+}
+
+#home .home-header .btn.btn-red:hover {
+  background-color: transparent;
+}
+
+#home .home-header .btn.btn-transparent {
+  background-color: transparent;
+  color: var(--red);
+  transition: all 0.5s ease;
+}
+
+#home .home-header .btn.btn-transparent:hover {
+  background-color: var(--red);
+  color: #fff;
+}
+#home .card-container {
+  margin-top: 5rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+#home .card-container .card {
+  padding: 25px;
+  background-color: #fff;
+  margin: 0 10px;
+  border-radius: 5px;
+}
+
+#home .card-container .card .icon {
+  display: inline-block;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+#home .card-container .card .icon svg {
+  font-size: 25px;
+}
+
+#home .card-container .card h2 {
+  font-size: 18px;
+  color: var(--dark-blue);
+  margin-top: 15px;
+}
+
+#home .card-container .card .line {
+  width: 50px;
+  height: 2px;
+  display: block;
+  background-color: var(--red);
+  margin: 15px 0;
+}
+
+#home .card-container .card p {
+  font-size: 14px;
+}
+
+/* Home End */
+/* Courses Start */
+#courses {
+  padding: 7rem 0;
+}
+
+.section-header h2 {
+  font-size: 35px;
+  margin: 15px 0;
+  color: var(--dark-blue);
+}
+
+.section-header p {
+  color: var(--iight-gray);
+}
+
+#courses .courses-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+}
+
+#courses .courses-container .courses .images {
+  width: 350px;
+  width: 100%;
+}
+
+#courses .courses-container .courses {
+  position: relative;
+}
+
+#courses .courses-container .courses .sale {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: var(--red);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 500;
+  border-radius: 5px;
+  padding: 5px 8px;
+}
+
+#courses .courses-container .courses .content .course-fiele {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#courses .courses-container .courses .content {
+  padding: 15px;
+  font-size: 14px;
+  color: var(--iight-gray);
+}
+
+#courses .courses-container .courses .content .course-fiele .department {
+  color: var(--sky-blue);
+  font-weight: 600;
+}
+
+#courses .courses-container .courses .content .course-fiele .rating {
+  background-color: var(--dark-blue);
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 20px;
+}
+
+#courses .courses-container .courses .content .course-fiele .rating svg {
+  color: var(--yellow);
+}
+
+#courses .courses-container .courses .content h3 {
+  margin: 10px 0;
+  color: var(--dark-blue);
+}
+
+#courses .courses-container .courses .content .sales {
+  margin: 10px 0;
+  font-weight: 600;
+}
+
+#courses .courses-container .courses .content .price del {
+  margin-right: 10px;
+  font-weight: 600;
+}
+
+#courses .courses-container .courses .content .course-info {
+  display: flex;
+  align-items: center;
+  margin: 15px 0;
+}
+
+#courses .courses-container .courses .content .course-info p {
+  margin-right: 10px;
+}
+
+#courses .courses-container .courses .content .course-info svg {
+  color: var(--sky-blue);
+  font-size: 20px;
+  vertical-align: middle;
+  margin-right: 3px;
+}
+
+#courses .courses-container .courses .content .btn-learn {
+  display: inline-block;
+  padding: 12px 20px;
+  border: 1px solid var(--sky-blue);
+  color: var(--sky-blue);
+  border-radius: 25px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+#courses .courses-container .courses .content .btn-learn:hover {
+  background-color: var(--sky-blue);
+  color: #fff;
+}
+/* Corses End */
+/* Reviews Start */
+#reviews {
+  padding-bottom: 7rem;
+}
+
+#reviews .ratings {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12rem;
+  margin-top: 5rem;
+}
+
+#reviews .ratings .rating img {
+  width: 50px;
+  border-radius: 50%;
+  height: 50px;
+  object-fit: cover;
+  margin-right: 12px;
+}
+
+#reviews .ratings .rating .stars {
+  color: var(--yellow);
+  display: block;
+  font-size: 20px;
+  text-align: center;
+}
+
+#reviews .ratings .rating .description {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 14px;
+  color: var(--iight-gray);
+}
+
+#reviews .ratings .rating .person {
+  display: flex;
+  align-items: center;
+  margin-top: 30px;
+  font-weight: 500;
+}
+/* Reviews End */
+/* Join Us Start */
+#join-us {
+  background-color: var(--dark-blue);
+  padding: 6rem 0;
+}
+
+#join-us .content {
+  max-width: 600px;
+  margin: auto;
+  text-align: center;
+  color: #fff;
+}
+
+#join-us h2 {
+  font-size: 35px;
+  margin: 15px 0;
+}
+
+#join-us .content form {
+  margin-top: 4rem;
+  position: relative;
+}
+
+#join-us .content form input {
+  padding: 12px;
+  border: none;
+  width: 100%;
+  border-radius: 5px;
+  font-size: 12px;
+}
+
+.input-error {
+  border: 2px solid red !important; /* استخدم !important عشان يتغلب على أي ستايل تاني */
+}
+
+.error-message {
+  color: red;
+  text-align: left;
+  margin-top: 9px;
+  font-size: 14px;
+  margin-left: 10px;
+}
+
+.succses-message {
+  color: rgb(89, 223, 89);
+  text-align: left;
+  margin-top: 9px;
+  font-size: 14px;
+  margin-left: 10px;
+}
+
+#join-us .content form button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 12px;
+  background-color: var(--sky-blue);
+  color: #fff;
+  border: none;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#join-us .content form button:hover {
+  background-color: #0d6a9f;
+}
+/* Join Us End */
+/* Main End */
+/* Footer Start */
+#footer .footer-row {
+  padding: 4rem 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3rem;
+}
+
+#footer .footer-row h2 {
+  margin-bottom: 20px;
+  color: var(--dark-blue);
+}
+
+#footer .footer-row p {
+  color: var(--iight-gray);
+}
+
+#footer .footer-row .social {
+  margin-top: 20px;
+}
+
+#footer .footer-row .social a {
+  color: var(--sky-blue);
+  margin-right: 10px;
+  font-size: 20px;
+}
+
+#footer .footer-row ul li {
+  margin: 10px 0;
+  color: var(--iight-gray);
+  font-weight: 500;
+}
+
+#footer .footer-row ul li a {
+  color: var(--iight-gray);
+}
+
+#footer .copy-right {
+  text-align: center;
+  padding: 20px 0;
+  color: var(--iight-gray);
+  font-weight: 500;
+}
+/* Footer End */
+/* Login Start */
+.login-page-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  background: #f8f9fa;
+}
+
+.login-box {
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 380px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  min-height: 70vh;
+}
+
+.login-title {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 5px;
+}
+
+.login-subtitle {
+  text-align: center;
+  color: #777;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.login-input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  margin-bottom: 25px;
+  font-size: 14px;
+}
+
+.login-input-error {
+  border-color: red;
+}
+
+.login-error-message {
+  font-size: 12px;
+  color: red;
+  margin: 0 0 8px;
+}
+
+.login-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  margin-bottom: 40px;
+  margin-left: 10px;
+}
+
+.login-forgot {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.login-btn {
+  width: 100%;
+  background: #007bff;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.login-btn:hover {
+  background: #0056b3;
+}
+
+.login-success {
+  font-size: 13px;
+  color: green;
+  text-align: center;
+  margin-top: 5px;
+}
+
+.login-or {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #777;
+  margin: 15px 0;
+  font-size: 14px;
+}
+
+.login-or span {
+  flex: 1;
+  height: 1px;
+  background: #ccc;
+  margin: 0 10px;
+}
+
+.google-btn,
+.facebook-btn {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: center;
+  font-size: 14px;
+  margin-bottom: 16px;
+  cursor: pointer;
+}
+
+.google-btn {
+  background: white;
+  border: 1px solid #ccc;
+}
+
+.facebook-btn {
+  background: #1877f2;
+  color: white;
+}
+
+.login-new {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 13px;
+}
+
+.login-new a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+/* Login End */
+/* Join Us Start */
+.join-container {
+  width: 100%;
+  max-width: 380px;
+  margin: 40px auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.join-container .text {
+  text-align: center;
+}
+
+.join-info {
+  color: #666;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.join-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.join-inputs input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.join-input-error {
+  border-color: red !important;
+}
+
+.join-error-message {
+  color: red;
+  font-size: 12px;
+  line-height: 14px;
+  min-height: 14px; /* مساحة ثابتة تمنع تحريك العناصر */
+  margin: 2px 0 0 4px;
+}
+
+.join-success-message {
+  color: green;
+  font-size: 14px;
+  margin: 10px 0;
+  text-align: center;
+}
+
+.join-btn {
+  width: 100%;
+  padding: 10px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.join-btn:hover {
+  background: #0056b3;
+}
+
+.or {
+  display: flex;
+  align-items: center;
+  margin: 15px 0;
+}
+
+.left-line,
+.right-line {
+  flex: 1;
+  height: 1px;
+  background: #ccc;
+}
+
+.join-or {
+  margin: 0 10px;
+  font-size: 14px;
+  color: #888;
+}
+
+.join-social {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.google-btn,
+.facebook-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 1px solid #ccc;
+  padding: 8px;
+  border-radius: 6px;
+  text-decoration: none;
+  color: black;
+  font-size: 14px;
+}
+
+.google-btn:hover {
+  background: #f1f1f1;
+}
+
+.facebook-btn {
+  background: #1877f2;
+  color: white;
+}
+
+.facebook-btn:hover {
+  background: #145dbf;
+}
+
+/* Join US End */
+
+/* Responsive */
+@media (max-width: 480px) {
+  .join-container {
+    padding: 15px;
+  }
+}
+
+
+
