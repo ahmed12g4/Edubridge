@@ -11,8 +11,8 @@ import Header from "./components/Header";
 import Main from "./components/Main";
 
 // Pages
-import Login from "./pages/Login";
-import JoinUs from "./pages/Join";
+import Login from "./Pages/Login";
+import JoinUs from "./Pages/Join";
 
 function Layout() {
   const location = useLocation();
