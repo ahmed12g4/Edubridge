@@ -8,8 +8,7 @@ import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Main from "./components/Main";
 import Login from "./pages/Login";
-import JoinUs from "./Pages/Join";
-
+import JoinUs from "./pages/Join";
 
 function Layout() {
   const location = useLocation();
@@ -22,9 +21,8 @@ function Layout() {
       <Routes>
         <Route path="/" element={<Main />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/Join" element={<JoinUs />} />
-
-        {/* لو عندك صفحات تانية زودها هنا */}
+        <Route path="/join" element={<JoinUs />} />
+        {/* ضيف أي صفحة جديدة هنا */}
       </Routes>
       {!hideLayout && <Footer />}
     </>
