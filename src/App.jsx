@@ -4,14 +4,20 @@ import {
   Route,
   useLocation,
 } from "react-router-dom";
+
+// Components
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Main from "./components/Main";
+
+// Pages
 import Login from "./pages/Login";
 import JoinUs from "./pages/Join";
 
 function Layout() {
   const location = useLocation();
+
+  // إخفاء الهيدر والفوتر في صفحات معينة
   const hideLayout =
     location.pathname === "/login" || location.pathname === "/join";
 
