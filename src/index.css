@@ -55,10 +55,14 @@ p {
   font-size: 14px;
 }
 
-/* Header Start */
-
+/* ===== Header Start ===== */
 #header {
   background-color: var(--dark-blue);
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
 }
 
 .navbar {
@@ -68,7 +72,7 @@ p {
   max-width: 1100px;
   margin: auto;
   padding: 0 2rem;
-  height: 100px;
+  height: 70px;
 }
 
 .navbar a {
@@ -79,8 +83,10 @@ p {
 .navbar .logo {
   font-size: 24px;
   font-weight: 600;
+  color: #fff;
 }
 
+/* Desktop menu */
 .navbar ul {
   display: flex;
 }
@@ -91,16 +97,17 @@ p {
 }
 
 .navbar ul li a:hover {
-  color: var(--red);
+  color: var(--sky-blue);
 }
 
 .navbar .account .btn-join {
   background-color: var(--sky-blue);
-  padding: 10px 20px;
+  padding: 8px 16px;
   margin-left: 25px;
   border-radius: 5px;
   text-transform: uppercase;
   transition: all 0.4s ease;
+  font-size: 13px;
 }
 
 .navbar .account .btn-join:hover {
@@ -111,6 +118,50 @@ p {
 .navbar .account .btn-join svg {
   font-size: 12px;
   margin-left: 5px;
+}
+
+.navbar .account a {
+  padding: 10px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.navbar .account a:hover {
+  color:  var(--sky-blue);
+}
+
+/* ===== Hamburger ===== */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: #fff;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+/* Animation X */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Responsive Menu */
+.nav-links {
+  display: flex;
+  align-items: center;
+  transition: all 0.4s ease;
 }
 
 /* Header End */
@@ -175,6 +226,7 @@ p {
   background-color: var(--red);
   color: #fff;
 }
+
 #home .card-container {
   margin-top: 5rem;
   display: grid;
@@ -185,7 +237,6 @@ p {
 #home .card-container .card {
   padding: 25px;
   background-color: #fff;
-  margin: 0 10px;
   border-radius: 5px;
 }
 
@@ -240,8 +291,9 @@ p {
 }
 
 #courses .courses-container .courses .images {
-  width: 350px;
   width: 100%;
+  height: auto;
+  display: block;
 }
 
 #courses .courses-container .courses {
@@ -408,7 +460,7 @@ p {
 }
 
 .input-error {
-  border: 2px solid red !important; /* استخدم !important عشان يتغلب على أي ستايل تاني */
+  border: 2px solid red !important;
 }
 
 .error-message {
@@ -673,7 +725,7 @@ p {
   color: red;
   font-size: 12px;
   line-height: 14px;
-  min-height: 14px; /* مساحة ثابتة تمنع تحريك العناصر */
+  min-height: 14px;
   margin: 2px 0 0 4px;
 }
 
@@ -754,28 +806,25 @@ p {
 
 /* Join US End */
 
-/* Responsive */
-@media (max-width: 480px) {
-  .join-container {
-    padding: 15px;
-  }
-}
-
-/* Responsive */
+/* ===== Responsive Tablet ===== */
 @media (max-width: 992px) {
+  .container {
+    padding: 0 1.5rem;
+  }
+
   #home .card-container {
     grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
+    gap: 2rem;
   }
 
   #courses .courses-container {
     grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
+    gap: 2.5rem;
   }
 
   #reviews .ratings {
     grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
+    gap: 3rem;
   }
 
   #footer .footer-row {
@@ -784,252 +833,13 @@ p {
   }
 }
 
+/* ===== Responsive Mobile ===== */
 @media (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
-    height: auto;
-    padding: 1rem;
+  .container {
+    padding: 0 1rem;
   }
 
-  .navbar ul {
-    flex-direction: column;
-    margin-top: 1rem;
-  }
-
-  .navbar .account {
-    margin-top: 1rem;
-  }
-
-  #home h1 {
-    font-size: 28px;
-  }
-
-  #home .card-container {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-
-  #courses .courses-container {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-
-  #reviews .ratings {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-
-  #footer .footer-row {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-
-  #footer .footer-row .social {
-    justify-content: center;
-  }
-}
-
-@media (max-width: 480px) {
-  body {
-    font-size: 14px;
-  }
-
-  .navbar .logo {
-    font-size: 20px;
-  }
-
-  #home h1 {
-    font-size: 22px;
-  }
-
-  .login-box,
-  .join-container {
-    padding: 15px;
-    margin: 20px;
-  }
-
-  .login-btn,
-  .join-btn {
-    font-size: 14px;
-    padding: 8px;
-  }
-}
-
-
-/* ===== Header Start ===== */
-#header {
-  background-color: var(--dark-blue);
-  position: sticky;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
-}
-
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1100px;
-  margin: auto;
-  padding: 0 2rem;
-  height: 70px;
-}
-
-.navbar a {
-  color: #fff;
-  font-size: 14px;
-}
-
-.navbar .logo {
-  font-size: 24px;
-  font-weight: 600;
-  color: #fff;
-}
-
-/* Desktop menu */
-.navbar ul {
-  display: flex;
-}
-
-.navbar ul li a {
-  margin: 0 10px;
-  transition: all 0.3s ease;
-}
-
-.navbar ul li a:hover {
-  color: var(--sky-blue);
-}
-
-/* Join button */
-.navbar .account .btn-join {
-  background-color: var(--sky-blue);
-  padding: 8px 16px;
-  margin-left: 25px;
-  border-radius: 5px;
-  text-transform: uppercase;
-  transition: all 0.4s ease;
-  font-size: 13px;
-}
-
-.navbar .account .btn-join:hover {
-  background-color: transparent;
-  border: 1px solid var(--sky-blue);
-}
-
-/* ===== Mobile Menu ===== */
-.hamburger {
-  display: none;
-  flex-direction: column;
-  cursor: pointer;
-  gap: 5px;
-}
-
-.hamburger span {
-  width: 25px;
-  height: 3px;
-  background: #fff;
-  border-radius: 3px;
-  transition: all 0.3s ease;
-}
-
-/* Menu hidden by default */
-.nav-links {
-  display: flex;
-  align-items: center;
-  transition: max-height 0.4s ease, opacity 0.4s ease;
-}
-
-.nav-links.mobile {
-  display: block;
-  position: absolute;
-  top: 70px;
-  left: 0;
-  width: 100%;
-  background: var(--dark-blue);
-  overflow: hidden;
-  max-height: 0;
-  opacity: 0;
-}
-
-.nav-links.mobile.active {
-  max-height: 400px;
-  opacity: 1;
-}
-
-.nav-links.mobile ul {
-  flex-direction: column;
-  padding: 1rem;
-}
-
-.nav-links.mobile ul li {
-  margin: 10px 0;
-  text-align: center;
-}
-
-.nav-links.mobile .account {
-  text-align: center;
-  margin-top: 1rem;
-}
-
-/* ===== Animation for hamburger ===== */
-.hamburger.active span:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
-}
-.hamburger.active span:nth-child(2) {
-  opacity: 0;
-}
-.hamburger.active span:nth-child(3) {
-  transform: rotate(-45deg) translate(6px, -6px);
-}
-
-/* ===== Responsive ===== */
-@media (max-width: 768px) {
-  .nav-links {
-    display: none;
-  }
-
-  .hamburger {
-    display: flex;
-  }
-}
-
-
-/* ===== Hamburger ===== */
-.hamburger {
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  cursor: pointer;
-}
-
-.hamburger span {
-  width: 25px;
-  height: 3px;
-  background: #fff;
-  border-radius: 3px;
-  transition: all 0.3s ease;
-}
-
-/* Animation X */
-.hamburger.active span:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
-}
-.hamburger.active span:nth-child(2) {
-  opacity: 0;
-}
-.hamburger.active span:nth-child(3) {
-  transform: rotate(-45deg) translate(5px, -5px);
-}
-
-/* Responsive Menu */
-.nav-links {
-  display: flex;
-  align-items: center;
-  transition: all 0.4s ease;
-}
-
-@media (max-width: 768px) {
+  /* Header Mobile */
   .nav-links {
     position: absolute;
     top: 70px;
@@ -1064,9 +874,277 @@ p {
   .hamburger {
     display: flex;
   }
+
+  .account {
+    display: none;
+  }
+
+  /* Home Mobile */
+  #home {
+    padding: 3rem 0;
+  }
+
+  #home .home-header {
+    max-width: 90%;
+  }
+
+  #home .home-header h1 {
+    font-size: 28px;
+    margin: 15px 0;
+  }
+
+  #home .home-header .btn {
+    padding: 8px 20px;
+    font-size: 11px;
+    margin: 5px 2px;
+  }
+
+  #home .card-container {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+
+  #home .card-container .card {
+    padding: 20px;
+  }
+
+  /* Courses Mobile */
+  #courses {
+    padding: 4rem 0;
+  }
+
+  .section-header h2 {
+    font-size: 28px;
+    text-align: center;
+  }
+
+  .section-header p {
+    text-align: center;
+    font-size: 14px;
+  }
+
+  #courses .courses-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+
+  #courses .courses-container .courses .content {
+    padding: 12px;
+  }
+
+  #courses .courses-container .courses .content .course-fiele {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  #courses .courses-container .courses .content .course-info {
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+
+  /* Reviews Mobile */
+  #reviews {
+    padding-bottom: 4rem;
+  }
+
+  #reviews .ratings {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+
+  #reviews .ratings .rating {
+    text-align: center;
+  }
+
+  #reviews .ratings .rating .person {
+    justify-content: center;
+    margin-top: 20px;
+  }
+
+  /* Join Us Mobile */
+  #join-us {
+    padding: 4rem 0;
+  }
+
+  #join-us h2 {
+    font-size: 28px;
+  }
+
+  #join-us .content {
+    max-width: 90%;
+  }
+
+  #join-us .content form {
+    margin-top: 2rem;
+  }
+
+  #join-us .content form input {
+    padding: 12px;
+    font-size: 14px;
+    padding-right: 80px;
+  }
+
+  #join-us .content form button {
+    padding: 12px 16px;
+    font-size: 12px;
+  }
+
+  /* Footer Mobile */
+  #footer .footer-row {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 2rem;
+    padding: 3rem 0;
+  }
+
+  #footer .footer-row .social {
+    justify-content: center;
+  }
 }
 
+/* ===== Responsive Small Mobile ===== */
+@media (max-width: 480px) {
+  body {
+    font-size: 14px;
+  }
 
+  .container {
+    padding: 0 0.8rem;
+  }
 
+  /* Header Small */
+  .navbar {
+    padding: 0 1rem;
+    height: 60px;
+  }
 
+  .navbar .logo {
+    font-size: 20px;
+  }
 
+  .nav-links {
+    top: 60px;
+  }
+
+  /* Home Small */
+  #home {
+    padding: 2rem 0;
+  }
+
+  #home .home-header h1 {
+    font-size: 22px;
+  }
+
+  #home .home-header p {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+
+  #home .home-header .btn {
+    padding: 6px 15px;
+    font-size: 10px;
+    display: block;
+    margin: 8px auto;
+    text-align: center;
+    width: fit-content;
+  }
+
+  #home .card-container {
+    margin-top: 2rem;
+    gap: 1rem;
+  }
+
+  #home .card-container .card {
+    padding: 15px;
+  }
+
+  #home .card-container .card h2 {
+    font-size: 16px;
+  }
+
+  #home .card-container .card p {
+    font-size: 13px;
+  }
+
+  /* Courses Small */
+  #courses {
+    padding: 3rem 0;
+  }
+
+  .section-header h2 {
+    font-size: 24px;
+  }
+
+  #courses .courses-container {
+    gap: 1.5rem;
+  }
+
+  #courses .courses-container .courses .content h3 {
+    font-size: 16px;
+  }
+
+  /* Reviews Small */
+  #reviews {
+    padding-bottom: 3rem;
+  }
+
+  #reviews .ratings {
+    gap: 1.5rem;
+  }
+
+  /* Join Us Small */
+  #join-us {
+    padding: 3rem 0;
+  }
+
+  #join-us h2 {
+    font-size: 22px;
+  }
+
+  #join-us .content form input {
+    padding: 10px;
+    padding-right: 70px;
+  }
+
+  #join-us .content form button {
+    padding: 10px 12px;
+  }
+
+  /* Login & Join Small */
+  .login-box,
+  .join-container {
+    padding: 15px;
+    margin: 15px;
+  }
+
+  .login-btn,
+  .join-btn {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .login-title {
+    font-size: 20px;
+  }
+
+  .login-options {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+    margin-left: 0;
+  }
+
+  /* Footer Small */
+  #footer .footer-row {
+    padding: 2rem 0;
+  }
+
+  #footer .copy-right {
+    font-size: 12px;
+    padding: 15px 0;
+  }
+}

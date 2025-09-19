@@ -35,19 +35,21 @@ export default function Header() {
               Contact
             </Link>
           </li>
-          <div className="account">
-            <Link to="/login" onClick={() => setMenuOpen(false)}>
-              Sign In
-            </Link>
-            <Link
-              to="/join"
-              className="btn-join"
-              onClick={() => setMenuOpen(false)}
-            >
-              Join Us <FaArrowRight />
-            </Link>
-          </div>
         </ul>
+
+        {/* Account Buttons */}
+        <div className="account">
+          <Link to="/login" onClick={() => setMenuOpen(false)}>
+            Sign In
+          </Link>
+          <Link
+            to="/join"
+            className="btn-join"
+            onClick={() => setMenuOpen(false)}
+          >
+            Join Us <FaArrowRight />
+          </Link>
+        </div>
 
         {/* Hamburger */}
         <div
